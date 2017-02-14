@@ -1,0 +1,14 @@
+{
+	"service": {
+		"name": "helloworld-proxy",
+		"tags": ["helloworld", "proxy"],
+		"address": "",
+		"port": 8000,
+		"checks": [{
+			"name": "test-http-helloworld-proxy",
+			"http": "http://proxy:8080", 
+			"interval": "5s",
+			"timeout": "1s"
+		}]
+	}
+}
