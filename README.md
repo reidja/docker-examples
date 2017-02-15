@@ -8,16 +8,25 @@
 ## Getting Started
 
 ```
-./start.sh
+./start.sh --build-images
+./start.sh [--nosentry]
 ```
 
-You will be prompted for a Sentry URL. You will need to set-up Sentry (http://localhost:5000), create a project and paste the API url (modify hostname to `sentry-server` not localhost) into the prompt.
+You will be prompted for a Sentry URL (unless run with --nosentry). You will need to set-up Sentry (http://localhost:5000), create a project and paste the API url (modify hostname to `sentry-server` not localhost) into the prompt.
 
 ```
 ./start-app3.sh
 ```
 
 This will start an appserver container (not daemonized) which will add a third `appserver` node (appserver3). If you continually refresh http://localhost:8000 you will be able to see it rotate between all three. If you stop appserver3 you will not see any errors (and you can start it again to have it back in the pool).
+
+## Additional Commands
+
+```
+# remove the persistent postgresql volume
+./start.sh --destroy-volumes
+```
+
 
 # Information 
 
@@ -31,6 +40,8 @@ This command will bring up the following docker containers:
   - Sentry (Application monitoring)
   - Application servers (Application)
   - Dynamically configured proxy (Load balancer)
+  - Metrics (Data Dog integration)
+  - Events (Data Dog integration)
 
 ## Service Discovery
 
