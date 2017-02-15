@@ -1,11 +1,11 @@
 {
 	"service": {
-		"name": "appserver-proxy",
-		"tags": ["appserver", "proxy"],
+		"name": "proxy",
+		"tags": ["proxy"],
 		"address": "",
 		"port": 8000,
 		"checks": [{
-			"name": "test-http-appserver-proxy",
+			"name": "test-http-proxy",
 			"http": "http://proxy:8080", 
 			"interval": "5s",
 			"timeout": "1s"
